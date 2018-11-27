@@ -23,11 +23,11 @@
 </nav>
 <div class="row mt-5 mb-0">
     <div class="col justify-content-center">
-        <p class="text-center">Used actors</p>
+        <p class="text-center">Used actuators</p>
     </div>
 </div>
 <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group" role="group" aria-label="First group">
+    <div class="btn-group" role="group" aria-label="First group" id="actuatorButtons">
         <button type="button" class="btn btn-secondary">0</button>
         <button type="button" class="btn btn-secondary">1</button>
         <button type="button" class="btn btn-secondary">2</button>
@@ -40,15 +40,17 @@
     <form>
         <div class="form-group mt-3">
             <label for="cycleTime">Cycletime</label>
-            <input type="email" class="form-control" id="cycleTime" aria-describedby="emailHelp" placeholder="e.g. 3000">
-            <small id="emailHelp" class="form-text text-muted">in milliseconds</small>
+            <input type="text" class="form-control" id="cycleTime" aria-describedby="cycleTimeHelp" placeholder="e.g. 3000">
+            <small id="cycleTimeHelp" class="form-text text-muted">in milliseconds</small>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="steps">Steps</label>
+            <input type="text" class="form-control" id="steps" aria-describedby="stepsHelp" placeholder="e.g 8">
+            <small id="stepsHelp" class="form-text text-muted">max. 10 steps</small>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-secondary" id="upload">Upload</button>
     </form>
 </div>
+<script src="js/functions.js"></script>
 </body>
 </html>
