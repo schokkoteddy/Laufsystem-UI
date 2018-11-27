@@ -7,7 +7,8 @@ window.chartColors = {
 	green: 'rgb(75, 192, 192)',
 	blue: 'rgb(54, 162, 235)',
 	purple: 'rgb(153, 102, 255)',
-	grey: 'rgb(201, 203, 207)'
+	grey: 'rgb(201, 203, 207)',
+	black: 'rgb(0,0,0)'             //added myself
 };
 
 (function(global) {
@@ -125,7 +126,7 @@ window.chartColors = {
 
 	// DEPRECATED
 	window.randomScalingFactor = function() {
-		return Math.round(Samples.utils.rand(-100, 100));
+		return Math.round(Samples.utils.rand(-0, 180));         //changed value myself
 	};
 
 	// INITIALIZATION
