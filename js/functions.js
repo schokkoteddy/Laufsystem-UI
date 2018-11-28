@@ -4,7 +4,7 @@ window.onload = function() {
     var ctx = document.getElementById('canvas').getContext('2d');
     window.myLine = new Chart(ctx, config);
    $('#copyModal').modal({ show: false});
-    var tmpString;
+   /* var tmpString;
     var saveName;
     for(var index = 0; index < Object.keys(patterns).length; index++){
         console.log(index);
@@ -13,8 +13,21 @@ window.onload = function() {
             saveName = "#save" + tmpString;
             $(saveName).prop('disabled',true);
         }
-    }
+    }*/
+   togglePatternButtons();
+   disableSaveButtons();
 };
+
+function togglePatternButtons(){
+    if(walking === true){
+        $("#patternButtons button").attr('disabled',false);
+    }
+    else
+    {
+        $("#patternButtons button").attr('disabled',true);
+    }
+
+}
 
 function enableSaveButtons(){
     var tmpString;
@@ -44,44 +57,26 @@ $('#stepsInput').val(steps);
 //contol page
 
 $("#walkButton").click(function () {
-    walking = true;
-    console.log(walking);
+        walking = true;
+        console.log(walking);
+        togglePatternButtons();
     }
 );
 
 $("#stopButton").click(function () {
         walking = false;
-    console.log(walking);
+        console.log(walking);
+        togglePatternButtons();
     }
 );
 
 //Navigating without reloading page
 
-$("#nav-controls").click(function () {
-    $(this).addClass("bg-secondary");
-    $("#controls").removeClass("d-none");
-    $("#nav-parameters").removeClass("bg-secondary");
-    $("#parameters").addClass("d-none");
-    $("#nav-patterns").removeClass("bg-secondary");
-    $("#patterns").addClass("d-none");
-});
-
-$("#nav-parameters").click(function () {
-    $(this).addClass("bg-secondary");
-    $("#parameters").removeClass("d-none");
-    $("#nav-controls").removeClass("bg-secondary");
-    $("#controls").addClass("d-none");
-    $("#nav-patterns").removeClass("bg-secondary");
-    $("#patterns").addClass("d-none");
-});
-
-$("#nav-patterns").click(function () {
-    $(this).addClass("bg-secondary");
-    $("#patterns").removeClass("d-none");
-    $("#nav-controls").removeClass("bg-secondary");
-    $("#controls").addClass("d-none");
-    $("#nav-parameters").removeClass("bg-secondary");
-    $("#parameters").addClass("d-none");
+$("[data-nav]").click(function () {
+    var pageId = $(this).attr("data-nav");
+    console.log("PageID: "+ pageId);
+    $("[data-nav]").removeClass("bg-secondary").filter("[data-nav = "+pageId+"]").addClass("bg-secondary");
+    $("[data-page]").addClass("d-none").filter("[data-page ="+pageId+"]").removeClass("d-none");
 });
 
 //paramters page
