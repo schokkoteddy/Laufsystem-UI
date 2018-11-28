@@ -43,13 +43,13 @@ $('#stepsInput').val(steps);
 
 //contol page
 
-$("#walk").click(function () {
+$("#walkButton").click(function () {
     walking = true;
     console.log(walking);
     }
 );
 
-$("#stop").click(function () {
+$("#stopButton").click(function () {
         walking = false;
     console.log(walking);
     }
@@ -102,15 +102,15 @@ $('#actuatorButtons button').click(function() {
 });
 
 $("#uploadButton").click(function () {
-    console.log($("#stepsInput").val());
-    if($("#stepsInput").val() > maxSteps)
+    console.log(stepsInput.val());
+    if(stepsInput.val() > maxSteps)
     {
         $("div .alert").removeClass("d-none");
     }
     else
     {
         $("div .alert").addClass("d-none");
-        steps = $("#stepsInput").val()
+        steps = stepsInput.val();
     }
     config.data.labels.splice(0,config.data.labels.length);
     for(var index = 0; index < steps; index++){
@@ -175,6 +175,7 @@ $("[data-save]").click(function () {
                 $("#firstCopyButton").text("Pattern 1").attr('data-copy','1');
                 $("#secondCopyButton").text("Pattern 2").attr('data-copy','2');
         }
+        $("#modalLabel").html("Copying Pattern " + saveId);
         $("#copyModal").modal('show').attr('data-selected', saveId);
     }
 
@@ -193,10 +194,10 @@ $("[data-save]").click(function () {
 
 $("#copyModal button").click(function () {                              //copying one pattern to another
     copyId = $(this).attr("data-copy");
-    /*for(var index = 0; index < pinNumber.length; index++){
+    for(var index = 0; index < pinNumber.length; index++){
         patterns['save'+copyId][index] = patterns['save'+saveId][index].filter(copyArray);
-    }*/
-    patterns['save'+copyId] = patterns['save'+saveId];
+    }
+    //patterns['save'+copyId] = patterns['save'+saveId];
     enableSaveButtons();
     $("#cancelButton").trigger("click");
     console.log("CopyID: " + copyId);

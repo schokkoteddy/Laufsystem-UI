@@ -32,37 +32,37 @@
 <div id="controls">
     <div class="container-fluid">
         <div class="row my-5"></div>
-        <div class="row my-5">
+        <div class="row my-5 justify-content-around">
             <div class ="col-3">
 
             </div>
-            <div class="col-3 text-center">
-                <button class="btn btn-success btn-lg" id="walk">Walk</button>
+            <div class="col-3 col-md-2 text-center">
+                <button class="btn btn-success btn-lg" id="walkButton">Walk</button>
             </div>
-            <div class="col-3 text-center">
-                <button class="btn btn-danger btn-lg" id="stop">Stop</button>
+            <div class="col-3 col-md-2 text-center">
+                <button class="btn btn-danger btn-lg" id="stopButton">Stop</button>
             </div>
             <div class ="col-3">
             </div>
         </div>
         <div class="row my-5">
         </div>
-        <div class="row my-5"></div>
-        <div class="row my-5"></div>
-        <div class="row my-5"></div>
-        <div class="row my-5"></div>
+        <div class="row my-5 my-md-2"></div>
+        <div class="row my-5 my-md-2"></div>
+        <div class="row my-5 my-md-2"></div>
+        <div class="row my-5 my-md-2"></div>
         <div class="row my-5 justify-content-center">
-            <div class="col-4 text-center justify-content-center">
+            <div class="col-sm-5 col-md-4 text-center justify-content-center">
                 <button class="btn btn-dark btn-lg btn-block" id="pattern1">Pattern 1</button>
             </div>
         </div>
-        <div class="row my-5">
-            <div class="col text-center">
+        <div class="row  my-5 text-center justify-content-center">
+            <div class="col-sm-5 col-md-4 text-center justify-content-center">
                 <button class="btn btn-dark btn-lg btn-block" id="pattern2">Pattern 2</button>
             </div>
         </div>
-        <div class="row my-5">
-            <div class="col text-center">
+        <div class="row  my-5 justify-content-center">
+            <div class="col-sm-5 col-md-4 text-center">
                 <button class="btn btn-dark btn-lg btn-block" id="pattern3">Pattern 3</button>
             </div>
         </div>
@@ -114,55 +114,58 @@
 </div>
 <div id="patterns" class="d-none">
     <div class="row">
-        <div class="col-12 py-5">
+        <div class="col-11 py-5 h-50">
             <canvas id="canvas"></canvas>
         </div>
     </div>
-    <div class="row justify-content-around mt-3">
-        <div class="col-3">
-            <button class="btn btn-dark btn-lg btn-block " data-save="1" id="save1">Pattern 1</button>
+    <div id="patternsManipulateButtons">
+        <div class="row justify-content-around mt-3">
+            <div class="col-4">
+                <button class="btn btn-dark btn-lg btn-block " data-save="1" id="save1">Pattern 1</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-dark btn-lg btn-block" data-save="2" id="save2">Pattern 2</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-dark btn-lg btn-block" data-save="3" id="save3">Pattern 3</button>
+            </div>
         </div>
-        <div class="col-3">
-            <button class="btn btn-dark btn-lg btn-block" data-save="2" id="save2">Pattern 2</button>
-    </div>
-        <div class="col-3">
-            <button class="btn btn-dark btn-lg btn-block" data-save="3" id="save3">Pattern 3</button>
-    </div>
-    </div>
-    <div class="row justify-content-around mt-3">
-        <div class="col-3">
-            <button class="btn btn-success btn-lg btn-block " id="saveButton">Save to</button>
+        <div class="row justify-content-around mt-3">
+            <div class="col-4">
+                <button class="btn btn-success btn-lg btn-block " id="saveButton">Save to</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-danger btn-lg btn-block " id="copyButton">Copy</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary btn-lg btn-block" id="clearButton">Clear</button>
+            </div>
         </div>
-        <div class="col-3">
-            <button class="btn btn-danger btn-lg btn-block " id="copyButton">Copy</button>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-primary btn-lg btn-block" id="clearButton">Clear</button>
-        </div>
-    </div>
-    <div class="row mt-3 justify-content-center">
-        <div class="col-3">
-            <button class="btn btn-secondary btn-lg btn-block d-none" id="cancelButton">Cancel</button>
+        <div class="row mt-3 justify-content-center">
+            <div class="col-4">
+                <button class="btn btn-secondary btn-lg btn-block d-none" id="cancelButton">Cancel</button>
+            </div>
         </div>
     </div>
-    <div class="modal fade" id="copyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-selected=0>
+
+    <div class="modal fade" id="copyModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" data-selected=0>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Copying one pattern to another</h5>
+                    <h5 class="modal-title" id="modalLabel">Copying one pattern to another</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Which pattern do you want to copy to</p>
+                    <p>Choose save slot</p>
                 </div>
                 <div class="modal-footer row justify-content-around">
                         <div class="col-4">
-                            <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal" data-copy="0" id="firstCopyButton"></button>
+                            <button type="button" class="btn btn-dark btn-block" data-dismiss="modal" data-copy="0" id="firstCopyButton"></button>
                         </div>
                         <div class="col-4">
-                            <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-copy="0" id="secondCopyButton"></button>
+                            <button type="button" class="btn btn-dark btn-block" data-dismiss="modal" data-copy="0" id="secondCopyButton"></button>
                         </div>
                 </div>
             </div>
