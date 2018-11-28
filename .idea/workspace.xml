@@ -4,11 +4,8 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="087bc9fb-1a79-4a15-b120-887c2d81e511" name="Default" comment="Changed popping up message for copying-mechanism">
+    <list default="true" id="087bc9fb-1a79-4a15-b120-887c2d81e511" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/definitions.js" afterPath="$PROJECT_DIR$/js/definitions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -254,7 +251,7 @@
       <workItem from="1543156405160" duration="19959000" />
       <workItem from="1543331811765" duration="587000" />
       <workItem from="1543332413464" duration="2534000" />
-      <workItem from="1543357092074" duration="6957000" />
+      <workItem from="1543357092074" duration="7015000" />
     </task>
     <task id="LOCAL-00001" summary="testing stuff">
       <created>1542291196789</created>
@@ -263,15 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1542291196789</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed popping up message for copying-mechanism">
+      <created>1543364568315</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1543364568315</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98658000" />
+    <option name="totallyTimeSpent" value="98716000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26752505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
