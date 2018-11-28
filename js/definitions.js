@@ -10,6 +10,8 @@ var copySelected = false;
 var clearSelected = false;
 var saveId = 0;
 var copyId = 0;
+var stepsInput = $("#stepsInput");
+var numberPages = 3;
 
 var STEPS = [];
 for(var index = 0; index < maxSteps; index++){
@@ -24,33 +26,18 @@ var config = {
             label: 'My First dataset',
             backgroundColor: window.chartColors.red,
             borderColor: window.chartColors.red,
-            data: [
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor()
-            ],
+            data: [],
             fill: false
         }, {
             label: 'My Second dataset',
             fill: false,
             backgroundColor: window.chartColors.blue,
             borderColor: window.chartColors.blue,
-            data: [
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor()
-            ]
+            data: []
         }]
     },
     options: {
+        maintainAspectRatio: true,
         elements: {
             line: {
                 tension: 0 // disables bezier curves
@@ -58,13 +45,10 @@ var config = {
         },
         dragData: true,
         dragX: false,
-        //onDragStart: function (event, element) {},
-        //onDrag: function (event, datasetIndex, index, value) {},
-        //onDragEnd: function (event, datasetIndex, index, value) {},
         responsive: true,
         title: {
             display: true,
-            text: 'Chart.js Line Chart'
+            text: 'Walkingpatterns'
         },
         tooltips: {
             mode: 'index',
@@ -90,7 +74,7 @@ var config = {
                 },
                 ticks: {
                     min: 0,
-                    callback: function(value) {if (value % 1   === 0) {return value;}},
+                    stepSize: 10,
                     max: 180
                 }
             }]
